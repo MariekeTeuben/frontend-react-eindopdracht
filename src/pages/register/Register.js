@@ -1,12 +1,12 @@
 import React from "react";
 
-function HomePage() {
+function Register() {
     return (
         <div>
-            <h1>Dit is de homepage</h1>
+            <h1>Welkom! Maak een nieuw account:</h1>
             <p>Work in progress...</p>
         </div>
     );
 }
 
-export default HomePage;
+export default Register;
