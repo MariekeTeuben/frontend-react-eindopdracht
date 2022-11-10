@@ -1,10 +1,9 @@
 import React from "react";
 import trail from '../../assets/trail.jpg';
-import manOnMountain from '../../assets/man_mountaintop.jpg';//
+import snow from '../../assets/national_park_snow.jpg';
 import elk from '../../assets/elk.jpg';//
 import './Home.css';
 import Card from "../../components/Card/Card";
-
 
 
 function HomePage() {
@@ -16,7 +15,6 @@ function HomePage() {
                     <h1>Discover America's Nature: the National Parks</h1>
                 </div>
             </section>
-
         </header>
         <main>
             <section className="outer-content-container">
@@ -33,9 +31,9 @@ function HomePage() {
                             description="Search by name, state or activity"
                         />
                         <Card
-                            image={manOnMountain}
+                            image={snow}
                             title="See all parks"
-                            description="Browse national parks from A to Z"
+                            description="Browse National Parks from A to Z"
                         />
                         <Card
                             image={elk}

@@ -3,13 +3,13 @@ import { Switch, Route,} from 'react-router-dom';
 import HomePage from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import Navigation from "./components/Navigation";
+import TopMenu from "./components/TopMenu/TopMenu";
 import './App.css';
 
 function App() {
   return (
       <>
-          <Navigation />
+          <TopMenu />
 
         <Switch>
             <Route exact path="/">
