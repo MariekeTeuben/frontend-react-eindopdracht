@@ -5,6 +5,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import TopMenu from "./components/TopMenu/TopMenu";
 import './App.css';
+import Browse from "./pages/browse/Browse";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
             </Route>
             <Route path="/login">
                 <Login />
+            </Route>
+            <Route path="/browse">
+                <Browse />
             </Route>
         </Switch>
       </>
