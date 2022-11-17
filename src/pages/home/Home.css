@@ -1,4 +1,4 @@
-header {
+.header-home {
     position: relative;
     width: 100%;
     height: 56vh;
@@ -11,7 +11,7 @@ header {
     background-size: cover;
 }
 
-header h1 {
+.title-homepage {
     font-size: 38px;
     font-weight: 300;
     color: white;
@@ -48,7 +48,7 @@ main button {
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-    margin:40px 0 0 0;
+    margin: 40px 0 0 0;
 }
 
 footer {

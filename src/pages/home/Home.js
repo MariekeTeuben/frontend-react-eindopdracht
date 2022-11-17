@@ -9,10 +9,10 @@ import Card from "../../components/Card/Card";
 function HomePage() {
     return (
         <>
-        <header>
+        <header className="header-home">
             <section className="outer-content-container">
                 <div className="inner-content-container">
-                    <h1>Discover America's Nature: the National Parks</h1>
+                    <h1 className="title-homepage">Discover America's Nature: the National Parks</h1>
                 </div>
             </section>
         </header>

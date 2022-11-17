@@ -6,6 +6,8 @@ import Register from "./pages/register/Register";
 import TopMenu from "./components/TopMenu/TopMenu";
 import './App.css';
 import Browse from "./pages/browse/Browse";
+import Search from "./pages/search/Search";
+import ParkDetails from "./pages/parkdetails/ParkDetails";
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
             </Route>
             <Route path="/browse">
                 <Browse />
+            </Route>
+            <Route path="/search">
+                <Search />
+            </Route>
+            <Route path="/parks/:parkCode">
+                <ParkDetails />
             </Route>
         </Switch>
       </>
