@@ -44,7 +44,10 @@ function HomePage() {
                 </div>
             </section>
         </main>
-        <footer>
+
+        <footer className="outer-content-container">
+            <div className="inner-content-container">
+            </div>
         </footer>
         </>
     );

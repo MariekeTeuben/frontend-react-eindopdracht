@@ -92,11 +92,7 @@ function ParkDetails() {
 
                                     <h5>Phone:</h5>
                                     <p>{details[0].contacts.phoneNumbers[0].phoneNumber}</p>
-
-
                                 </div>
-
-
                         )}
                     </div>
                 </section>

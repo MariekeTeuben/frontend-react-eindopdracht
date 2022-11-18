@@ -1,0 +1,65 @@
+[33mcommit d8d51be090b649b4122046d43a79f1e3f4327e83[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Thu Nov 17 14:41:46 2022 +0100
+
+    opzet parkDetails page
+
+[33mcommit 03eb1a009592e5c4154cd426e44b8f22b2403320[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Sun Nov 13 14:35:01 2022 +0100
+
+    ul van parknamen
+
+[33mcommit 6c1907170b158f0dacd0ad2aaa4d04e923970d2e[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Sun Nov 13 10:29:07 2022 +0100
+
+    Eerste opzet data-fetchen
+
+[33mcommit 60f085e89c32b907532555a62faabf4fe2692bff[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Thu Nov 10 14:39:43 2022 +0100
+
+    Eerste opzet datafetching
+
+[33mcommit d363d9c868065c1d01cce51bbdc77a2cac4062c3[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Thu Nov 10 09:58:33 2022 +0100
+
+    componenten topmenu en card toegevoegd
+
+[33mcommit 026582dfac6240629c94fbd74aca014363270773[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Fri Nov 4 11:10:06 2022 +0100
+
+    Aanpassingen homepage
+
+[33mcommit 3df4b06cf4cf45f647925c0cdb9021a59f922219[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Thu Nov 3 16:29:02 2022 +0100
+
+    Eerste opzet homepage
+
+[33mcommit a6aa19edf5f0087965068e20c5982b34eed9936e[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Sat Oct 22 17:53:14 2022 +0200
+
+    Eerste setup van navigatiebalk
+
+[33mcommit 55225950194279dfd1e3cc178b5338278b96ac6c[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Sat Oct 22 15:57:45 2022 +0200
+
+    Eerste setup routing
+
+[33mcommit 5b8359f38630777caf5607606551b269441489b4[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Sat Oct 15 16:50:48 2022 +0200
+
+    Eerste setup van project
+
+[33mcommit a70537b05100822e31953d6cb8d6bb3a3e0ad67c[m
+Author: MariekeTeuben <marieke@marenmaa.nl>
+Date:   Sat Oct 15 12:36:49 2022 +0200
+
+    Initialize project using Create React App
