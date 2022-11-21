@@ -1,0 +1,12 @@
+.header-signin {
+    position: relative;
+    width: 100%;
+    height: 32vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-image: url("../../assets/happy_trails.jpg");
+    background-position: 0 52%;
+    background-size: cover;
+}

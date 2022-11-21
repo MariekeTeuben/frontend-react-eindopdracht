@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route,} from 'react-router-dom';
 import HomePage from "./pages/home/Home";
-import Login from "./pages/login/Login";
+import Signin from "./pages/signin/Signin";
 import Register from "./pages/register/Register";
 import TopMenu from "./components/TopMenu/TopMenu";
 import './App.css';
@@ -21,8 +21,8 @@ function App() {
             <Route path="/register">
                 <Register />
             </Route>
-            <Route path="/login">
-                <Login />
+            <Route exact path="/signin">
+                <Signin />
             </Route>
             <Route path="/browse">
                 <Browse />

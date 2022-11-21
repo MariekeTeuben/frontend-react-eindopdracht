@@ -1,0 +1,20 @@
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 0 0 16px 0;
+}
+
+.searchbar input {
+    border-radius: 2px 0 0 2px;
+    border: none;
+    padding: 8px 16px;
+    width: 40%;
+    outline: none;
+}
+
+.searchbar input {
+    font-family: "Poppins", sans-serif;
+    background-color: #e7e6f7;
+}

@@ -5,14 +5,14 @@ import {Link} from "react-router-dom";
 
 
 function Browse() {
-    const [parkCards, setParkCards] = useState([]);
+    const [parkResults, setParkResults] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             try {
                 const result = await axios.get(`https://developer.nps.gov/api/v1/parks?limit=500&api_key=gF5KCU6HVDRDuaDyTQuyKS6YOzzaNBkgJl1IlOZg`);
                 console.log(result.data.data);
-                setParkCards(result.data.data);
+                setParkResults(result.data.data);
             } catch (e) {
                 console.error(e);
             }
@@ -38,10 +38,10 @@ function Browse() {
                         <h2 className="browse-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</h2>
 
                             <ul>
-                                {parkCards.length > 0 && parkCards.map((parkCard) => {
-                                    return <li key={parkCard.parkCode}>
-                                        <Link to={`parks/${parkCard.parkCode}`}>
-                                            {parkCard.fullName}
+                                {parkResults.length > 0 && parkResults.map((parkResult) => {
+                                    return <li key={parkResult.parkCode}>
+                                        <Link to={`parks/${parkResult.parkCode}`}>
+                                            {parkResult.fullName}
                                         </Link>
                                     </li>
                                 })
