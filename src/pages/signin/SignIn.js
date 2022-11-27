@@ -1,9 +1,10 @@
-import React from 'react';
-import './Signin.css';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import {AuthContext} from "../../context/AuthContext";
+import './Signin.css';
 
 
-function Signin() {
+function SignIn() {
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -21,34 +22,36 @@ function Signin() {
             <main>
                 <section className="outer-content-container">
                     <div className="inner-content-container">
-                        <form onSubmit={handleSubmit}>
-                            <label htmlFor="emailaddress">
+                        <form className="form-box" onSubmit={handleSubmit}>
+                            <h2 className="form-title">Sign in</h2>
+                            <label className="form-label" htmlFor="emailaddress">
                                 Emailaddress
-                                <input
+                                <input className="form-input"
                                     type="text"
                                     id="emailaddress"
                                     name="email"
-                                    placeholder="Typ hier je emailadres"
                                 />
                             </label>
-                            <label htmlFor="password">
+                            <label className="form-label" htmlFor="password">
                                 Password
-                                <input
+                                <input className="form-input"
                                     type="text"
                                     id="password"
                                     name="password"
-                                    placeholder="Typ hier je wachtwoord"
                                 />
                             </label>
-
-                            <button type="submit">Inloggen</button>
-                            <p>Heb je nog geen account? <Link to="/signup">Registreer</Link> je dan eerst.</p>
+                            <button className="form-button" type="submit">Sign in</button>
+                            <p className="signup-link"> <Link to="/signup">New to NPS? Sign up now</Link></p>
                         </form>
                     </div>
                 </section>
             </main>
+            <footer className="outer-content-container">
+                <div className="inner-content-container">
+                </div>
+            </footer>
         </>
     );
 }
 
-export default Signin;
+export default SignIn;
