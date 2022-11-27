@@ -21,6 +21,7 @@
     width: 300px;
     font-weight: 400;
     font-size: 18px;
+    text-transform: capitalize;
     color: #CE4E2E;
     text-align: center;
     padding: 8px 0 8px 0;

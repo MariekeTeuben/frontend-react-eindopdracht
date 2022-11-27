@@ -1,5 +1,5 @@
 import React from "react";
-import './Signup.css';
+import './SignUp.css';
 import { Link } from 'react-router-dom';
 
 

@@ -1,10 +1,10 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import trail from '../../assets/trail.jpg';
 import snow from '../../assets/national_park_snow.jpg';
 import elk from '../../assets/elk.jpg';//
-import './Home.css';
 import Card from "../../components/Card/Card";
-
+import './Home.css';
 
 function HomePage() {
     return (
@@ -20,25 +20,28 @@ function HomePage() {
             <section className="outer-content-container">
                 <div className="inner-content-container">
                     <div className="call-to-action-container">
-                        <button type="button">
-                            Start your experience
-                        </button>
+                        <Link
+                            className="call-to-action"
+                            to="/signup"
+                        >
+                            start your experience
+                        </Link>
                     </div>
                     <div className="app-info-container">
                         <Card
                             image={trail}
-                            title="Find a park"
-                            description="Search by name, state or activity"
+                            title="find a park"
+                            description="Search by Name, State or Activity"
                         />
                         <Card
                             image={snow}
-                            title="See all parks"
+                            title="see all parks"
                             description="Browse National Parks from A to Z"
                         />
                         <Card
                             image={elk}
-                            title="Get your personal favorites"
-                            description="Bookmark the parks you like"
+                            title="get your personal favorites"
+                            description="Bookmark the Parks you like"
                         />
                     </div>
                 </div>

@@ -17,7 +17,7 @@
     color: white;
     padding: 50px;
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.12) 0 1px 4px;
+    text-shadow: rgba(0, 0, 0, 0.12) 0 2px 10px;
 }
 
 main {
@@ -26,19 +26,13 @@ main {
     height: 47vh;
 }
 
-.call-to-action-container {
+.call-to-action {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-main button {
     background-color: #476D5C;
-    font-weight: 300;
-    border-radius: 2px;
-    padding: 6px 40px;
-    font-size: 16px;
     color: white;
+    text-transform: uppercase;
+    border-radius: 2px;
+    padding: 6px 15px;
     box-shadow: rgba(0, 0, 0, 0.04) 0 1px 4px;
 }
 
@@ -52,7 +46,10 @@ main button {
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: #476D5C;
-    padding: 10px 0;
 }
+
 

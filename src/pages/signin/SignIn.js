@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
-import './Signin.css';
+import './SignIn.css';
 
 
 function SignIn() {
+    const { login } = useContext(AuthContext);
 
     function handleSubmit(e) {
         e.preventDefault();
+        login();
     }
-
 
     return (
         <>

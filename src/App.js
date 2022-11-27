@@ -1,41 +1,45 @@
-import React from "react";
-import { Switch, Route,} from 'react-router-dom';
+import React, { useContext } from "react";
+import { Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from "./pages/home/Home";
-import Signin from "./pages/signin/Signin";
-import Register from "./pages/register/Register";
+import Signin from "./pages/signin/SignIn";
+import Signup from "./pages/signup/SignUp";
 import TopMenu from "./components/TopMenu/TopMenu";
-import './App.css';
 import Browse from "./pages/browse/Browse";
 import Search from "./pages/search/Search";
 import ParkDetails from "./pages/parkdetails/ParkDetails";
+import { AuthContext } from "./context/AuthContext";
+import './App.css';
 
 function App() {
-  return (
-      <>
-          <TopMenu />
+    const { isAuth } = useContext(AuthContext);
 
-        <Switch>
-            <Route exact path="/">
-                <HomePage />
-            </Route>
-            <Route path="/register">
-                <Register />
-            </Route>
-            <Route exact path="/signin">
-                <Signin />
-            </Route>
-            <Route path="/browse">
-                <Browse />
-            </Route>
-            <Route path="/search">
-                <Search />
-            </Route>
-            <Route path="/parks/:parkCode">
-                <ParkDetails />
-            </Route>
-        </Switch>
-      </>
-  );
+    return (
+        <>
+            <TopMenu />
+            <div className="content">
+            <Switch>
+                <Route exact path="/">
+                    <HomePage />
+                </Route>
+                <Route exact path="/signup">
+                    <Signup />
+                </Route>
+                <Route exact path="/signin">
+                    <Signin />
+                </Route>
+                <Route path="/browse">
+                    {isAuth ? <Browse /> : <Redirect to="/" />}
+                </Route>
+                <Route path="/search">
+                    {isAuth ? <Search /> : <Redirect to="/" />}
+                </Route>
+                <Route path="/parks/:parkCode">
+                    {isAuth ? <ParkDetails /> : <Redirect to="/" />}
+                </Route>
+            </Switch>
+            </div>
+        </>
+    );
 }
 
 export default App;

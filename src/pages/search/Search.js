@@ -10,22 +10,75 @@ function Search() {
     const [parkResults, setParkResults] = useState({});
     const [name, setName] = useState('');
     const [state, setState] = useState('');
+    const [activity, setActivity] = useState('');
 
     useEffect(() => {
-        async function fetchData() {
+        async function fetchDataByName() {
             try {
                 const result = await axios.get(`https://developer.nps.gov/api/v1/parks?parkCode=&limit=50&q=${name}&api_key=gF5KCU6HVDRDuaDyTQuyKS6YOzzaNBkgJl1IlOZg`);
                 console.log(result.data.data);
-                setParkResults(result.data.data);
+
+                setParkResults(result.data.data.filter((park)=>{
+                    console.log(park.fullName)
+                    return park.fullName.toLowerCase().includes(name.toLowerCase())
+                }))
+
             } catch (e) {
                 console.error(e);
             }
+
         }
 
-        if (name || state) {
-            fetchData();
+        if (name) {
+            fetchDataByName();
         }
-    }, [name, state]);
+    }, [name]);
+;
+
+    useEffect(() => {
+        async function fetchDataByState() {
+            try {
+                const result = await axios.get(`https://developer.nps.gov/api/v1/parks?parkCode=&stateCode=${state}&limit=50&api_key=gF5KCU6HVDRDuaDyTQuyKS6YOzzaNBkgJl1IlOZg`);
+                console.log(result.data.data);
+
+                setParkResults(result.data.data)
+
+            } catch (e) {
+                console.error(e);
+            }
+
+        }
+
+        if (state) {
+            fetchDataByState();
+        }
+    }, [state]);
+
+
+    useEffect(() => {
+        async function fetchDataByActivity() {
+            try {
+                const result = await axios.get(`https://developer.nps.gov/api/v1/activities/parks?id=${activity}&api_key=gF5KCU6HVDRDuaDyTQuyKS6YOzzaNBkgJl1IlOZg`);
+                console.log(result.data.data);
+
+                setParkResults(result.data.data[0].parks);
+/*
+                setParkResults(result.data.data.filter((test)=>{
+                    console.log(test.fullName)
+                    return test.fullName
+                }))
+*/
+            } catch (e) {
+                console.error(e);
+            }
+
+        }
+
+        if (activity) {
+            fetchDataByActivity();
+        }
+    }, [activity]);
+
 
 
 return (
@@ -39,14 +92,13 @@ return (
         <main>
             <section className="outer-content-container">
                 <div className="inner-content-container">
-                    <div className="search-options">
                     <h1>Find a Park</h1>
-                    <SearchBar
-                        setNameHandler={setName}
-                        setStateHandler={setState}
-                    />
-
-
+                    <div className="search-options">
+                        <SearchBar
+                            setNameHandler={setName}
+                            setStateHandler={setState}
+                            setActivityHandler={setActivity}
+                        />
                     </div>
 
                     <div className= "results-overview">
