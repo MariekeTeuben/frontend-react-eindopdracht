@@ -1,15 +1,22 @@
+.search-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
 .searchbar {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
-    width: 90%;
+    width: 100%;
 }
 
 .search-options {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*space-between;*/
     width: 100%;
+    flex-wrap: nowrap;
 }
 
 .search-label {
@@ -18,6 +25,7 @@
     font-size: 12px;
     font-weight: 500;
     padding: 2px;
+    width: 30%;
 }
 
 .search-buttons {

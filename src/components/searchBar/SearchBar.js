@@ -15,13 +15,18 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
                 const result = await axios.get(`https://developer.nps.gov/api/v1/activities?api_key=gF5KCU6HVDRDuaDyTQuyKS6YOzzaNBkgJl1IlOZg`);
                 console.log(result.data.data);
                 setCategories(result.data.data);
+
+                setNameHandler('');
+                setStateHandler('');
+                setActivityHandler('');
+
             } catch (e) {
                 console.error(e);
             }
         }
 
         fetchActivities();
-    }, []);
+    }, [setNameHandler, setStateHandler, setActivityHandler]);
 
 
     function handleClick() {
@@ -37,6 +42,7 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
             setActivityHandler(activity);
         }
     }
+
 
     return (
         <span className="searchbar">
@@ -57,7 +63,7 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
                     <select value={state} onChange={(e) => setState(e.target.value)}>
                         <option value=''>-</option>
                         {states.map((state) => (
-                            <option value={state.abbreviation}>{state.name}</option>
+                            <option key={state.id} value={state.abbreviation}>{state.name}</option>
                         ))}
                     </select>
                 </label>
@@ -67,7 +73,7 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
                     <select value={activity} onChange={(e) => setActivity(e.target.value)}>
                         <option value=''>-</option>
                         {categories.map((category) => (
-                            <option value={category.id}>{category.name}</option>
+                            <option key={category.id} value={category.id}>{category.name}</option>
                         ))}
                     </select>
                 </label>
@@ -79,12 +85,6 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
                         onClick={handleClick}
                 >
                     search
-                </button>
-                <button className="button-clear"
-                    type="button"
-                    onClick={handleClick}
-                >
-                    Clear filters
                 </button>
             </div>
         </span>

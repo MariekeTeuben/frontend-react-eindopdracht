@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# Getting Started with National Park Service App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the National Park Service App! The app where you can start planning your visit to the beautiful National Parks of the USA.
+
+In this app you can:
+* See all National Parks
+* Search for a Park by Name, State or Activity
+* Get detailed information for each Park
+* Get a list of your personal favorites 
+
+In order to use the app, you first need to register an account.
+
+A quick glance at the NPS app:
+
+![](public/searchPage.png)
+
+![](public/browsePage.png)
+
+# React App
+The National Park Service app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Below you will find the available scripts.
 
 ## Available Scripts
 

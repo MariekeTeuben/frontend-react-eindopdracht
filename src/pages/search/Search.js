@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './Search.css';
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBar from "../../components/searchBar/SearchBar";
 import {Link} from "react-router-dom";
 
 
@@ -62,12 +62,7 @@ function Search() {
                 console.log(result.data.data);
 
                 setParkResults(result.data.data[0].parks);
-/*
-                setParkResults(result.data.data.filter((test)=>{
-                    console.log(test.fullName)
-                    return test.fullName
-                }))
-*/
+
             } catch (e) {
                 console.error(e);
             }
@@ -93,7 +88,7 @@ return (
             <section className="outer-content-container">
                 <div className="inner-content-container">
                     <h1>Find a Park</h1>
-                    <div className="search-options">
+                    <div className="search-container">
                         <SearchBar
                             setNameHandler={setName}
                             setStateHandler={setState}

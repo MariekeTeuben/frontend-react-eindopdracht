@@ -8,13 +8,11 @@ function AuthContextProvider({ children }) {
     const history = useHistory();
 
     function login() {
-        console.log('Gebruiker is ingelogd!');
         toggleIsAuth(true);
         history.push('/browse');
     }
 
     function logout() {
-        console.log('Gebruiker is uitgelogd!');
         toggleIsAuth(false);
         history.push('/');
     }

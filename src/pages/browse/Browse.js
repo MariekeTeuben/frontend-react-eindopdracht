@@ -6,6 +6,9 @@ import {Link} from "react-router-dom";
 
 function Browse() {
     const [parkResults, setParkResults] = useState([]);
+    const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    const [fullList, setFullList] = useState([]);
+
 
     useEffect(() => {
         async function fetchData() {
@@ -13,6 +16,7 @@ function Browse() {
                 const result = await axios.get(`https://developer.nps.gov/api/v1/parks?limit=500&api_key=gF5KCU6HVDRDuaDyTQuyKS6YOzzaNBkgJl1IlOZg`);
                 console.log(result.data.data);
                 setParkResults(result.data.data);
+                setFullList(result.data.data); // Needed for search
             } catch (e) {
                 console.error(e);
             }
@@ -21,7 +25,13 @@ function Browse() {
         fetchData();
     }, []);
 
-
+    function getByAlphabet(letter) {
+        setParkResults(fullList.filter((park)=>{
+            console.log(park.fullName)
+            console.log("First letter: " + letter)
+            return park.fullName.toLowerCase().startsWith(letter.toString().toLowerCase())
+        }))
+    };
 
     return (
         <>
@@ -35,12 +45,23 @@ function Browse() {
                 <section className="outer-content-container">
                     <div className="inner-content-container">
                         <h1>National Parks by Alphabet</h1>
-                        <h2 className="browse-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</h2>
+
+                        <div>
+                            {alphabet.length > 0 && alphabet.map((letter) => {
+                                return <button className="browse-alphabet"
+                                               type="button"
+                                               onClick={() => getByAlphabet(`${letter}`)}
+                                >
+                                    {letter}
+                                </button>
+                            })
+                            }
+                        </div>
 
                             <ul>
                                 {parkResults.length > 0 && parkResults.map((parkResult) => {
                                     return <li key={parkResult.parkCode}>
-                                        <Link to={`parks/${parkResult.parkCode}`}>
+                                            <Link to={`parks/${parkResult.parkCode}`}>
                                             {parkResult.fullName}
                                         </Link>
                                     </li>

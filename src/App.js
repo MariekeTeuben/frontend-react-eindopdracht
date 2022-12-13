@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from "./pages/home/Home";
-import Signin from "./pages/signin/SignIn";
+import SignIn from "./pages/signin/SignIn";
 import Signup from "./pages/signup/SignUp";
-import TopMenu from "./components/TopMenu/TopMenu";
+import TopMenu from "./components/topMenu/TopMenu";
 import Browse from "./pages/browse/Browse";
 import Search from "./pages/search/Search";
 import ParkDetails from "./pages/parkdetails/ParkDetails";
@@ -24,8 +24,8 @@ function App() {
                 <Route exact path="/signup">
                     <Signup />
                 </Route>
-                <Route exact path="/signin">
-                    <Signin />
+                <Route exact path="/signIn">
+                    <SignIn />
                 </Route>
                 <Route path="/browse">
                     {isAuth ? <Browse /> : <Redirect to="/" />}

@@ -25,11 +25,11 @@ function SignIn() {
                     <div className="inner-content-container">
                         <form className="form-box" onSubmit={handleSubmit}>
                             <h2 className="form-title">Sign in</h2>
-                            <label className="form-label" htmlFor="emailaddress">
-                                Emailaddress
+                            <label className="form-label" htmlFor="username">
+                                Username
                                 <input className="form-input"
                                     type="text"
-                                    id="emailaddress"
+                                    id="username"
                                     name="email"
                                 />
                             </label>
@@ -44,6 +44,7 @@ function SignIn() {
                             <button className="form-button" type="submit">Sign in</button>
                             <p className="signup-link"> <Link to="/signup">New to NPS? Sign up now</Link></p>
                         </form>
+
                     </div>
                 </section>
             </main>
