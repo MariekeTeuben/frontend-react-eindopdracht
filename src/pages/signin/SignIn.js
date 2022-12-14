@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import {AuthContext} from "../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import './SignIn.css';
 
 
 function SignIn() {
-    const { login } = useContext(AuthContext);
+    const {login} = useContext(AuthContext);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -28,21 +28,21 @@ function SignIn() {
                             <label className="form-label" htmlFor="username">
                                 Username
                                 <input className="form-input"
-                                    type="text"
-                                    id="username"
-                                    name="email"
+                                       type="text"
+                                       id="username"
+                                       name="email"
                                 />
                             </label>
                             <label className="form-label" htmlFor="password">
                                 Password
                                 <input className="form-input"
-                                    type="text"
-                                    id="password"
-                                    name="password"
+                                       type="text"
+                                       id="password"
+                                       name="password"
                                 />
                             </label>
                             <button className="form-button" type="submit">Sign in</button>
-                            <p className="signup-link"> <Link to="/signup">New to NPS? Sign up now</Link></p>
+                            <p className="signup-link"><Link to="/signup">New to NPS? Sign up now</Link></p>
                         </form>
 
                     </div>

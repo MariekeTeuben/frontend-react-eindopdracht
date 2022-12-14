@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {useHistory, useParams} from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 import axios from "axios";
 import './ParkDetails.css';
 import Card from "../../components/card/Card";
@@ -9,17 +9,11 @@ function ParkDetails() {
     const [details, setDetails] = useState({});
     const {parkCode} = useParams();
 
-    const history = useHistory()
-
-    const goBack = () => {
-        history.goBack()
-    }
 
     useEffect(() => {
         async function fetchData() {
             try {
                 const result = await axios.get(`https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&limit=500&api_key=gF5KCU6HVDRDuaDyTQuyKS6YOzzaNBkgJl1IlOZg`);
-                console.log(result.data.data);
                 setDetails(result.data.data);
             } catch (e) {
                 console.error(e);
@@ -101,7 +95,7 @@ function ParkDetails() {
                                 <h5>Phone:</h5>
                                 <p>{details[0].contacts.phoneNumbers[0].phoneNumber}</p>
                             </div>
-                            )}
+                        )}
                     </div>
                 </section>
             </main>

@@ -20,13 +20,13 @@ A quick glance at the NPS app:
 The National Park Service app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
 # Requirements
-Node/NPM, ESLint, Git
+Node/NPM, Git
 
 # Installation
-* Clone from https://github.com/MariekeTeuben/frontend-react-eindopdracht
+* Clone project by running `git clone https://github.com/MariekeTeuben/frontend-react-eindopdracht` 
 * Install node_modules by running `npm install` 
 * Start the application by running `npm start` 
-* Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 * Information about the National Park Services API is located at https://www.nps.gov/subjects/developer/api-documentation.htm   
 
 

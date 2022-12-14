@@ -5,7 +5,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     background-image: url("../../assets/lake.jpg");
     background-position: 0 23%;
     background-size: cover;

@@ -11,12 +11,12 @@ function SignUp() {
     const [confirmPassWord, setConfirmPassWord] = useState('');
 
     async function handleSubmit() {
-        if (passWord===confirmPassWord) {
+        if (passWord === confirmPassWord) {
             try {
                 const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup', {
                     "username": {userName},
-                    "email" : {emailValue},
-                    "password" : {passWord},
+                    "email": {emailValue},
+                    "password": {passWord},
                     "role": ["user"]
                 });
                 console.log(response);

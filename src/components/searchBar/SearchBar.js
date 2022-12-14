@@ -13,7 +13,6 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
         async function fetchActivities() {
             try {
                 const result = await axios.get(`https://developer.nps.gov/api/v1/activities?api_key=gF5KCU6HVDRDuaDyTQuyKS6YOzzaNBkgJl1IlOZg`);
-                console.log(result.data.data);
                 setCategories(result.data.data);
 
                 setNameHandler('');
