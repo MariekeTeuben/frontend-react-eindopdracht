@@ -12,12 +12,23 @@ In order to use the app, you first need to register an account.
 
 A quick glance at the NPS app:
 
-![](public/searchPage.png)
-
 ![](public/browsePage.png)
 
-# React App
-The National Park Service app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Below you will find the available scripts.
+![](public/searchPage.png)
+
+# React
+The National Park Service app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+
+# Requirements
+Node/NPM, ESLint, Git
+
+# Installation
+* Clone from https://github.com/MariekeTeuben/frontend-react-eindopdracht
+* Install node_modules by running `npm install` 
+* Start the application by running `npm start` 
+* Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Information about the National Park Services API is located at https://www.nps.gov/subjects/developer/api-documentation.htm   
+
 
 ## Available Scripts
 
