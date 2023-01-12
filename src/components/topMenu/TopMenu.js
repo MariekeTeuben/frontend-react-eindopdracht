@@ -6,7 +6,7 @@ import './TopMenu.css';
 
 
 function TopMenu() {
-    const {isAuth, logout} = useContext(AuthContext);
+    const {auth, logout} = useContext(AuthContext);
     const history = useHistory();
 
     return (
@@ -22,7 +22,7 @@ function TopMenu() {
                     </span>
                     </Link>
 
-                    {isAuth ?
+                    {auth.isAuth ?
                         <>
                         <span className="button-container">
                             <button

@@ -11,7 +11,7 @@ import {AuthContext} from "./context/AuthContext";
 import './App.css';
 
 function App() {
-    const {isAuth} = useContext(AuthContext);
+    const {auth} = useContext(AuthContext);
 
     return (
         <>
@@ -28,13 +28,13 @@ function App() {
                         <SignIn/>
                     </Route>
                     <Route path="/browse">
-                        {isAuth ? <Browse/> : <Redirect to="/"/>}
+                        {auth.isAuth ? <Browse/> : <Redirect to="/"/>}
                     </Route>
                     <Route path="/search">
-                        {isAuth ? <Search/> : <Redirect to="/"/>}
+                        {auth.isAuth ? <Search/> : <Redirect to="/"/>}
                     </Route>
                     <Route path="/parks/:parkCode">
-                        {isAuth ? <ParkDetails/> : <Redirect to="/"/>}
+                        {auth.isAuth ? <ParkDetails/> : <Redirect to="/"/>}
                     </Route>
                 </Switch>
             </div>
