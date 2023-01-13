@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import jwtDecode from "jwt-decode";
 
 export const AuthContext = createContext({});
 
@@ -10,12 +11,21 @@ function AuthContextProvider({children}) {
     });
     const history = useHistory();
 
-    function login() {
+    function login(token) {
+        console.log(token);
+
+        localStorage.setItem('token', token);
+        const decodedToken = jwtDecode(token);
+        console.log('decoded token:', decodedToken);
+
         toggleAuth( {
             ...auth,
             isAuth: true,
-            // user moet ook gevuld worden
+            user: {
+                username: decodedToken.sub
+            }
         });
+        console.log('Gebruiker is ingelogd');
         history.push('/browse');
     }
 
