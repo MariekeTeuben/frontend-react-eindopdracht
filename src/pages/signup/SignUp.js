@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './SignUp.css';
 import {Link, useHistory} from 'react-router-dom';
 import axios from "axios";
+import {ImInfo} from "react-icons/im";
 
 
 function SignUp() {
@@ -52,7 +53,7 @@ function SignUp() {
                             <form className="form-box" onSubmit={handleSubmit} >
                                 <h2 className="form-title">Sign up</h2>
                                 <label className="form-label" htmlFor="username-field">
-                                    Username
+                                    Username <ImInfo />
                                     <input className="form-input"
                                            type="text"
                                            id="username-field"
@@ -72,7 +73,7 @@ function SignUp() {
                                 </label>
 
                                 <label className="form-label" htmlFor="password-field">
-                                    Password
+                                    Password <ImInfo />
                                     <input className="form-input"
                                            type="password"
                                            id="password-field"
@@ -91,7 +92,7 @@ function SignUp() {
                                     />
                                 </label>
                                 {error &&
-                                    <p className="error">Dit account bestaat al. Probeer een ander emailadres.</p>}
+                                    <p className="error">This account already exists. Please try a different email address to register.</p>}
                                 <button
                                     type="submit"
                                     className="form-button"
