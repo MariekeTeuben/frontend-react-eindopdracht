@@ -36,7 +36,7 @@ function HomePage() {
                             <Card
                                 image={snow}
                                 title="see all parks"
-                                description="Browse National Parks from A to Z"
+                                description="Get a list of all National Parks from A to Z"
                             />
                             <Card
                                 image={elk}

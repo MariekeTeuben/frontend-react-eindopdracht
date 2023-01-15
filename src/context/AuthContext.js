@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, {createContext, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import jwtDecode from "jwt-decode";
 
@@ -9,6 +9,7 @@ function AuthContextProvider({children}) {
         isAuth: false,
         user: null,
     });
+
     const history = useHistory();
 
     function login(token) {
@@ -35,6 +36,7 @@ function AuthContextProvider({children}) {
             isAuth: false,
             user: null,
         });
+        localStorage.clear();
         history.push('/');
     }
 
