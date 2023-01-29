@@ -6,7 +6,7 @@ import './TopMenu.css';
 
 
 function TopMenu() {
-    const {auth, logout} = useContext(AuthContext);
+    const {isAuthenticated, logoutFunction} = useContext(AuthContext);
     const history = useHistory();
 
     return (
@@ -22,7 +22,7 @@ function TopMenu() {
                     </span>
                     </Link>
 
-                    {auth.isAuth ?
+                    {isAuthenticated ?
                         <>
                         <span className="button-container">
                             <button
@@ -48,7 +48,7 @@ function TopMenu() {
                            <button
                                className="button-logout"
                                type="button"
-                               onClick={logout}
+                               onClick={logoutFunction}
                            >
                                Log Out
                            </button>

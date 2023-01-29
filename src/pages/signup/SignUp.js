@@ -63,7 +63,7 @@ function SignUp() {
                                 </label>
 
                                 <label className="form-label" htmlFor="email-field">
-                                    Emailaddress
+                                    Email address
                                     <input className="form-input"
                                            type="email"
                                            id="email-field"
@@ -91,8 +91,7 @@ function SignUp() {
                                            onChange={(e) => setConfirmPassWord(e.target.value)}
                                     />
                                 </label>
-                                {error &&
-                                    <p className="error">This account already exists. Please try a different email address to register.</p>}
+                                {error && <p className="error">This account already exists. Please try a different email address to register.</p>}
                                 <button
                                     type="submit"
                                     className="form-button"

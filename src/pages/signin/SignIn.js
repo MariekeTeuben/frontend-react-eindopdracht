@@ -1,29 +1,27 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
 import './SignIn.css';
 import axios from "axios";
 
 function SignIn() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [user, setUsername] = useState('');
+    const [pass, setPassword] = useState('');
     const [error, toggleError] = useState(false);
-    const { login } = useContext(AuthContext);
+    const {loginFunction} = useContext(AuthContext);
 
     async function handleSubmit(e) {
         e.preventDefault();
         toggleError(false);
+        console.log("Invoer: " + user + pass);
 
         try {
             const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
-                username: username,
-                password: password,
+                username: user,
+                password: pass,
             });
-
             console.log(response.data.accessToken);
-            login(response.data.accessToken);
-
-
+            loginFunction(response.data.accessToken);
         } catch(e) {
             console.error(e);
             toggleError(true);
@@ -50,7 +48,7 @@ function SignIn() {
                                     type="text"
                                     id="username-field"
                                     name="email"
-                                    value={username}
+                                    value={user}
                                     onChange={(e) => setUsername(e.target.value)}
                                 />
                             </label>
@@ -58,10 +56,10 @@ function SignIn() {
                                 Password
                                 <input
                                     className="form-input"
-                                    type="text"
+                                    type="password"
                                     id="password-field"
                                     name="password"
-                                    value={password}
+                                    value={pass}
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
                             </label>
