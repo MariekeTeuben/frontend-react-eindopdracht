@@ -1,12 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useContext} from "react";
+import {Link} from "react-router-dom";
 import trail from '../../assets/trail.jpg';
 import snow from '../../assets/national_park_snow.jpg';
 import elk from '../../assets/elk.jpg';//
 import Card from "../../components/card/Card";
 import './Home.css';
+import {AuthContext} from "../../context/AuthContext";
+
 
 function HomePage() {
+    const { isAuthenticated } = useContext(AuthContext);
+
     return (
         <>
             <header className="header-home">
@@ -20,12 +24,21 @@ function HomePage() {
                 <section className="outer-content-container">
                     <div className="inner-content-container">
                         <div className="call-to-action-container">
-                            <Link
-                                className="call-to-action"
-                                to="/signup"
-                            >
-                                start your experience
-                            </Link>
+                            {isAuthenticated ?
+                                <Link
+                                    className="call-to-action"
+                                    to="/browse"
+                                >
+                                    start your experience
+                                </Link>
+                            :
+                                <Link
+                                    className="call-to-action"
+                                    to="/signup"
+                                >
+                                    start your experience
+                                </Link>
+                            }
                         </div>
                         <div className="app-info-container">
                             <Card
@@ -36,7 +49,7 @@ function HomePage() {
                             <Card
                                 image={snow}
                                 title="see all parks"
-                                description="Browse National Parks from A to Z"
+                                description="Get a list of all National Parks from A to Z"
                             />
                             <Card
                                 image={elk}
