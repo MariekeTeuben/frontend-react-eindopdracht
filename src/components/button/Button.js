@@ -4,7 +4,7 @@ import './Button.css';
 function Button({children, clickHandler, disabled }) {
     return (
         <button
-            type="button"
+            type= "button"
             className="nav-button"
             onClick={clickHandler}
             disabled={disabled}
