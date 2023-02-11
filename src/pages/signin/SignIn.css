@@ -47,17 +47,6 @@
     border: none;
 }
 
-.form-button {
-    border-radius: 4px;
-    border: none;
-    margin: 28px 8px 16px 8px;
-    padding: 8px 16px;
-    background-color: #CE4E2E;
-    color: white;
-    font-weight: normal;
-    width: 70%;
-}
-
 .signup-link {
     font-size: 0.8em;
     padding: 0 8px 24px 0;

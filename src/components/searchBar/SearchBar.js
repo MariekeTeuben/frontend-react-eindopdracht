@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import states from '../../data/states.json';
 import './SearchBar.css';
 import axios from "axios";
+import Button from "../button/Button";
 
 function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
     const [name, setName] = useState('');
@@ -79,12 +80,13 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
             </div>
 
             <div className="search-buttons">
-                <button className="button-search-searchbar"
-                        type="button"
-                        onClick={handleClick}
+                <Button
+                    type="button"
+                    className="button--highlighted"
+                    clickHandler={handleClick}
                 >
-                    search
-                </button>
+                    Search
+                </Button>
             </div>
         </span>
     );

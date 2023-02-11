@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
 import './SignIn.css';
 import axios from "axios";
+import Button from "../../components/button/Button";
 
 function SignIn() {
     const [user, setUsername] = useState('');
@@ -65,7 +66,12 @@ function SignIn() {
                             </label>
                             {error && <p className="error">Invalid username or password. Please re-enter your user information.</p>}
 
-                            <button className="form-button" type="submit">Sign in</button>
+                            <Button
+                                type="submit"
+                                className="button--form"
+                            >
+                                Sign in
+                            </Button>
                             <p className="signup-link"><Link to="/signup">New to NPS? Sign up now</Link></p>
                         </form>
 

@@ -1,11 +1,12 @@
 import React from 'react';
 import './Button.css';
 
-function Button({children, clickHandler, disabled }) {
+
+function Button({ children, type, className, clickHandler, disabled }) {
     return (
         <button
-            type= "button"
-            className="nav-button"
+            type= {type}
+            className={className}
             onClick={clickHandler}
             disabled={disabled}
         >

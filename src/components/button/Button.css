@@ -1,4 +1,4 @@
-.nav-button {
+.button {
     border-radius: 4px;
     border: none;
     padding: 8px 16px;
@@ -7,7 +7,7 @@
     font-weight: bold;
 }
 
-.nav-button__highlighted{
+.button--highlighted {
     border-radius: 4px;
     border: none;
     padding: 8px 16px;
@@ -16,15 +16,26 @@
     font-weight: bold;
 }
 
-.nav-button:hover {
+.button--form {
+    border-radius: 4px;
+    border: none;
+    margin: 28px 8px 16px 8px;
+    padding: 8px 16px;
+    background-color: #CE4E2E;
+    color: white;
+    font-weight: normal;
+    width: 70%;
+}
+
+.button, .button--highlighted, .button--form:hover {
     cursor: pointer;
 }
 
-.nav-button:disabled {
+.button:disabled {
     background-color: darkgray;
     cursor: not-allowed;
 }
 
-.nav-button + .nav-button {
+.button + .button {
     margin-left: 8px;
 }

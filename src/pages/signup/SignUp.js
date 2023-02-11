@@ -3,6 +3,7 @@ import './SignUp.css';
 import {Link, useHistory} from 'react-router-dom';
 import axios from "axios";
 import {ImInfo} from "react-icons/im";
+import Button from "../../components/button/Button";
 
 
 function SignUp() {
@@ -92,13 +93,13 @@ function SignUp() {
                                     />
                                 </label>
                                 {error && <p className="error">This account already exists. Please try a different email address to register.</p>}
-                                <button
+                                <Button
                                     type="submit"
-                                    className="form-button"
+                                    className="button--form"
                                     disabled={loading}
                                 >
                                     Sign up
-                                </button>
+                                </Button>
 
                                 <p className="signup-link">Already have an account? <Link to="/signIn">Click here</Link>
                                 </p>
