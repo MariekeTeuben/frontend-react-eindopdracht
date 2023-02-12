@@ -5,10 +5,10 @@ import './Button.css';
 function Button({ children, type, className, clickHandler, disabled }) {
     return (
         <button
-            type= {type}
+            type={type}
             className={className}
             onClick={clickHandler}
-            //disabled={disabled}
+            disabled={disabled}
         >
             {children}
         </button>
