@@ -68,7 +68,7 @@ function SignIn() {
 
                             <Button
                                 type="submit"
-                                className="button--form"
+                                className="button button--red-wide"
                             >
                                 Sign in
                             </Button>

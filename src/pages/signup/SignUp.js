@@ -95,7 +95,7 @@ function SignUp() {
                                 {error && <p className="error">This account already exists. Please try a different email address to register.</p>}
                                 <Button
                                     type="submit"
-                                    className="button--form"
+                                    className="button button--red-wide"
                                     disabled={loading}
                                 >
                                     Sign up

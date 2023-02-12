@@ -82,7 +82,7 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
             <div className="search-buttons">
                 <Button
                     type="button"
-                    className="button--highlighted"
+                    className="button button--red"
                     clickHandler={handleClick}
                 >
                     Search

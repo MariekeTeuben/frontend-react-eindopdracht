@@ -8,7 +8,7 @@ function Button({ children, type, className, clickHandler, disabled }) {
             type= {type}
             className={className}
             onClick={clickHandler}
-            disabled={disabled}
+            //disabled={disabled}
         >
             {children}
         </button>

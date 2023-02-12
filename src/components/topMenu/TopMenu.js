@@ -48,7 +48,7 @@ function TopMenu() {
                             </Button>
                            <Button
                                type="button"
-                               className="button--highlighted"
+                               className="button button--red"
                                clickHandler={logoutFunction}
                            >
                                Log Out
@@ -66,7 +66,7 @@ function TopMenu() {
                             </Button>
                             <Button
                                 type="button"
-                                className="button--highlighted"
+                                className="button button--red"
                                 clickHandler={() => history.push('/signup')}
                             >
                                 Sign up
