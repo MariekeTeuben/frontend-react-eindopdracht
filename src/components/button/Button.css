@@ -1,0 +1,54 @@
+.button {
+    border-radius: 4px;
+    border: none;
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.button--red {
+    background-color: #CE4E2E;
+}
+
+.button--red-wide {
+    margin: 28px 8px 16px 8px;
+    background-color: #CE4E2E;
+    font-weight: normal;
+    width: 70%;
+}
+
+.button--character {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 4px;
+    color: #476D5C;
+    letter-spacing: 1px;
+    margin: 4px 8px 20px 8px;
+    border: none;
+    background-color: white;
+}
+
+.button, .button--red, .button--red-wide:hover {
+    cursor: pointer;
+}
+
+.button--character:hover {
+    cursor: pointer;
+    background: #ddd;
+    color: #444;
+}
+
+.button--character:focus {
+    background: #476D5C;
+    color: white;
+}
+
+.button:disabled {
+    background-color: darkgray;
+    cursor: not-allowed;
+}
+
+.button + .button {
+    margin-left: 8px;
+}

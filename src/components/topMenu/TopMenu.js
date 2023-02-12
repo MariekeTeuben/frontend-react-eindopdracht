@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import Button from "../button/Button";
 import logo from '../../assets/logo.png';
 import './TopMenu.css';
 
@@ -25,51 +26,51 @@ function TopMenu() {
                     {isAuthenticated ?
                         <>
                         <span className="button-container">
-                            <button
-                                className="button-browse"
+                            <Button
                                 type="button"
-                                onClick={() => history.push('/browse')}
+                                className="button"
+                                clickHandler={() => history.push('/browse')}
                             >
                                 Browse
-                            </button>
-                            <button
-                                className="button-search"
+                            </Button>
+                            <Button
                                 type="button"
-                                onClick={() => history.push('/search')}
+                                className="button"
+                                clickHandler={() => history.push('/search')}
                             >
                                 Search
-                            </button>
-                            <button
-                                className="button-favorites"
+                            </Button>
+                            <Button
                                 type="button"
+                                className="button"
                             >
                                 Favorites
-                            </button>
-                           <button
-                               className="button-logout"
+                            </Button>
+                           <Button
                                type="button"
-                               onClick={logoutFunction}
+                               className="button button--red"
+                               clickHandler={logoutFunction}
                            >
                                Log Out
-                           </button>
+                           </Button>
                         </span>
                         </>
                         :
                         <span className="button-container">
-                            <button
-                                className="button-sign-in"
+                            <Button
                                 type="button"
-                                onClick={() => history.push('/signin')}
+                                className="button"
+                                clickHandler={() => history.push('/signin')}
                             >
                                 Sign in
-                            </button>
-                            <button
-                                className="button-sign-up"
+                            </Button>
+                            <Button
                                 type="button"
-                                onClick={() => history.push('/signup')}
+                                className="button button--red"
+                                clickHandler={() => history.push('/signup')}
                             >
                                 Sign up
-                            </button>
+                            </Button>
                         </span>
                     }
                 </nav>

@@ -45,24 +45,5 @@
 
 select {
     padding: 6px 180px 6px 6px;
-
-}
-
-.button-search-searchbar {
-    border-radius: 4px;
-    border: none;
-    padding: 8px 16px;
-    background-color: #CE4E2E;
-    color: white;
-    text-transform: uppercase;
-}
-
-.button-clear {
-    border: none;
-    background-color: white;
-    color: black;
-}
-
-button + button {
-    margin-left: 24px;
+    margin: 6px 0;
 }

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
 import './SignIn.css';
 import axios from "axios";
+import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 function SignIn() {
     const [user, setUsername] = useState('');
@@ -43,29 +45,30 @@ function SignIn() {
                             <h2 className="form-title">Sign in</h2>
                             <label className="form-label" htmlFor="username-field">
                                 Username
-                                <input
-                                    className="form-input"
+                                <Input
                                     type="text"
                                     id="username-field"
-                                    name="email"
                                     value={user}
-                                    onChange={(e) => setUsername(e.target.value)}
+                                    changeHandler={(e) => setUsername(e.target.value)}
                                 />
                             </label>
                             <label className="form-label" htmlFor="password-field">
                                 Password
-                                <input
-                                    className="form-input"
+                                <Input
                                     type="password"
                                     id="password-field"
-                                    name="password"
                                     value={pass}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    changeHandler={(e) => setPassword(e.target.value)}
                                 />
                             </label>
                             {error && <p className="error">Invalid username or password. Please re-enter your user information.</p>}
 
-                            <button className="form-button" type="submit">Sign in</button>
+                            <Button
+                                type="submit"
+                                className="button button--red-wide"
+                            >
+                                Sign in
+                            </Button>
                             <p className="signup-link"><Link to="/signup">New to NPS? Sign up now</Link></p>
                         </form>
 

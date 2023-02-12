@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './Browse.css';
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Button from "../../components/button/Button";
 
 
 function Browse() {
@@ -45,12 +46,13 @@ function Browse() {
 
                         <div>
                             {alphabet.length > 0 && alphabet.map((letter) => {
-                                return <button className="browse-alphabet"
-                                               type="button"
-                                               onClick={() => getByAlphabet(`${letter}`)}
+                                return <Button
+                                    type="button"
+                                    className="button--character"
+                                    clickHandler={() => getByAlphabet(`${letter}`)}
                                 >
                                     {letter}
-                                </button>
+                                </Button>
                             })
                             }
                         </div>

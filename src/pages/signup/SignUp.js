@@ -3,6 +3,8 @@ import './SignUp.css';
 import {Link, useHistory} from 'react-router-dom';
 import axios from "axios";
 import {ImInfo} from "react-icons/im";
+import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 
 function SignUp() {
@@ -54,51 +56,51 @@ function SignUp() {
                                 <h2 className="form-title">Sign up</h2>
                                 <label className="form-label" htmlFor="username-field">
                                     Username <ImInfo />
-                                    <input className="form-input"
-                                           type="text"
-                                           id="username-field"
-                                           value={userName}
-                                           onChange={(e) => setUserName(e.target.value)}
+                                    <Input
+                                       type="text"
+                                       id="username-field"
+                                       value={userName}
+                                       changeHandler={(e) => setUserName(e.target.value)}
                                     />
                                 </label>
 
                                 <label className="form-label" htmlFor="email-field">
                                     Email address
-                                    <input className="form-input"
-                                           type="email"
-                                           id="email-field"
-                                           value={emailValue}
-                                           onChange={(e) => setEmailValue(e.target.value)}
+                                    <Input
+                                       type="email"
+                                       id="email-field"
+                                       value={emailValue}
+                                       changeHandler={(e) => setEmailValue(e.target.value)}
                                     />
                                 </label>
 
                                 <label className="form-label" htmlFor="password-field">
                                     Password <ImInfo />
-                                    <input className="form-input"
-                                           type="password"
-                                           id="password-field"
-                                           value={passWord}
-                                           onChange={(e) => setPassWord(e.target.value)}
+                                    <Input
+                                       type="password"
+                                       id="password-field"
+                                       value={passWord}
+                                       changeHandler={(e) => setPassWord(e.target.value)}
                                     />
                                 </label>
 
                                 <label className="form-label" htmlFor="confirm-password-field">
                                     Confirm Password
-                                    <input className="form-input"
-                                           type="password"
-                                           id="confirm-password-field"
-                                           value={confirmPassWord}
-                                           onChange={(e) => setConfirmPassWord(e.target.value)}
+                                    <Input
+                                       type="password"
+                                       id="confirm-password-field"
+                                       value={confirmPassWord}
+                                       changeHandler={(e) => setConfirmPassWord(e.target.value)}
                                     />
                                 </label>
                                 {error && <p className="error">This account already exists. Please try a different email address to register.</p>}
-                                <button
+                                <Button
                                     type="submit"
-                                    className="form-button"
+                                    className="button button--red-wide"
                                     disabled={loading}
                                 >
                                     Sign up
-                                </button>
+                                </Button>
 
                                 <p className="signup-link">Already have an account? <Link to="/signIn">Click here</Link>
                                 </p>
