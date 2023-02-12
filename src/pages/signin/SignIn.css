@@ -39,14 +39,6 @@
     font-weight: 400;
 }
 
-.form-input {
-    width: 100%;
-    padding: 6px 8px;
-    margin: 6px 0;
-    background-color: lightgrey;
-    border: none;
-}
-
 .signup-link {
     font-size: 0.8em;
     padding: 0 8px 24px 0;

@@ -3,6 +3,7 @@ import states from '../../data/states.json';
 import './SearchBar.css';
 import axios from "axios";
 import Button from "../button/Button";
+import Input from "../input/Input";
 
 function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
     const [name, setName] = useState('');
@@ -49,12 +50,12 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
             <div className="search-options">
                 <label className="search-label" htmlFor="by-name">
                     By Name
-                    <input
+                    <Input
                         type="text"
-                        name="search"
+                        id="by-name"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        onKeyUp={keyPressCheck}
+                        changeHandler={(e) => setName(e.target.value)}
+                        keyHandler={keyPressCheck}
                     />
                 </label>
 

@@ -39,7 +39,7 @@
     color: #444;
 }
 
-.button--character:active {
+.button--character:focus {
     background: #476D5C;
     color: white;
 }
