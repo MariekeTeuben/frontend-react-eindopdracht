@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import './SignUp.css';
 import {Link, useHistory} from 'react-router-dom';
 import axios from "axios";
-import {ImInfo} from "react-icons/im";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
-
 
 function SignUp() {
     const [userName, setUserName] = useState('');
@@ -55,15 +53,15 @@ function SignUp() {
                             <form className="form-box" onSubmit={handleSubmit} >
                                 <h2 className="form-title">Sign up</h2>
                                 <label className="form-label" htmlFor="username-field">
-                                    Username <ImInfo />
+                                    Username
                                     <Input
                                        type="text"
                                        id="username-field"
                                        value={userName}
                                        changeHandler={(e) => setUserName(e.target.value)}
+                                       toolTipContent={"At least 6 characters"}
                                     />
                                 </label>
-
                                 <label className="form-label" htmlFor="email-field">
                                     Email address
                                     <Input
@@ -75,12 +73,13 @@ function SignUp() {
                                 </label>
 
                                 <label className="form-label" htmlFor="password-field">
-                                    Password <ImInfo />
+                                    Password
                                     <Input
                                        type="password"
                                        id="password-field"
                                        value={passWord}
                                        changeHandler={(e) => setPassWord(e.target.value)}
+                                       toolTipContent={"At least 6 characters"}
                                     />
                                 </label>
 
