@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import trail from '../../assets/trail.jpg';
 import snow from '../../assets/national_park_snow.jpg';
 import elk from '../../assets/elk.jpg';//
-import Card from "../../components/card/Card";
+import Card from '../../components/card/Card';
 import './Home.css';
 import {AuthContext} from "../../context/AuthContext";
 

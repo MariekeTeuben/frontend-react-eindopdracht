@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import jwtDecode from "jwt-decode";
 import axios from "axios";
+import loading from '../../src/assets/loader.gif';
 
 export const AuthContext = createContext({});
 
@@ -97,7 +98,7 @@ function AuthContextProvider({ children }) {
 
     return (
         <AuthContext.Provider value={contextData}>
-            {isAuth.status === 'done' ? children : <p>Loading...</p>}
+            {isAuth.status === 'done' ? children : <p>{loading}</p>}
         </AuthContext.Provider>
     );
 }
