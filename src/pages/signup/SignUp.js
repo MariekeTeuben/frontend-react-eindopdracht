@@ -3,29 +3,28 @@ import './SignUp.css';
 import {Link, useHistory} from 'react-router-dom';
 import axios from "axios";
 import Button from "../../components/button/Button";
-import Input from "../../components/input/Input";
+import { useForm } from 'react-hook-form';
 
 function SignUp() {
-    const [userName, setUserName] = useState('');
-    const [emailValue, setEmailValue] = useState('');
-    const [passWord, setPassWord] = useState('');
-    const [confirmPassWord, setConfirmPassWord] = useState('');
-
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
+
     const history = useHistory();
 
-    async function handleSubmit(e) {
-        if (passWord === confirmPassWord) {
-            e.preventDefault();
+    const {register, handleSubmit, formState: {errors}} = useForm();
+
+    async function onFormSubmit(data) {
+        console.log(data);
+        //if (passWord === confirmPassWord) {
+
             toggleError(false);
             toggleLoading(true);
 
             try {
                 const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup', {
-                    username: userName,
-                    email: emailValue,
-                    password: passWord,
+                    username: data.username,
+                    email: data.email,
+                    password: data.password,
                     role: ["user"],
                 });
                 console.log(response);
@@ -37,7 +36,8 @@ function SignUp() {
 
             toggleLoading(false);
         }
-    }
+
+        console.log('ERRORS', errors);
 
         return (
             <>
@@ -50,49 +50,63 @@ function SignUp() {
                 <main>
                     <section className="outer-content-container">
                         <div className="inner-content-container">
-                            <form className="form-box" onSubmit={handleSubmit} >
+                            <form className="form-box" onSubmit={handleSubmit(onFormSubmit)}>
                                 <h2 className="form-title">Sign up</h2>
+
                                 <label className="form-label" htmlFor="username-field">
                                     Username
-                                    <Input
-                                       type="text"
-                                       id="username-field"
-                                       value={userName}
-                                       changeHandler={(e) => setUserName(e.target.value)}
-                                       toolTipContent={"At least 6 characters"}
+                                    <input
+                                        type="text"
+                                        id="username-field"
+                                        {...register("username", {
+                                            required: "This field is required",
+                                            minLength: {value: 6, message: "Minimum amount of characters is 6"}
+                                        })}
                                     />
+                                    {errors.username && <p className="error-message">{errors.username.message}</p>}
                                 </label>
+
                                 <label className="form-label" htmlFor="email-field">
                                     Email address
-                                    <Input
-                                       type="email"
-                                       id="email-field"
-                                       value={emailValue}
-                                       changeHandler={(e) => setEmailValue(e.target.value)}
+                                    <input
+                                        type="email"
+                                        id="email-field"
+                                        {...register("email", {
+                                            required: "This field is required",
+                                            validate: (value) => value.includes('@') || 'Include an @ in the email address'
+                                        })}
                                     />
+                                    {errors.email && <p className="error-message">{errors.email.message}</p>}
                                 </label>
 
                                 <label className="form-label" htmlFor="password-field">
                                     Password
-                                    <Input
-                                       type="password"
-                                       id="password-field"
-                                       value={passWord}
-                                       changeHandler={(e) => setPassWord(e.target.value)}
-                                       toolTipContent={"At least 6 characters"}
+                                    <input
+                                        type="password"
+                                        id="password-field"
+                                        {...register("password", {
+                                            required: "This field is required",
+                                            minLength: {value: 6, message: "Minimum amount of characters is 6"}
+                                        })}
                                     />
+                                    {errors.password && <p className="error-message">{errors.password.message}</p>}
                                 </label>
 
                                 <label className="form-label" htmlFor="confirm-password-field">
                                     Confirm Password
-                                    <Input
-                                       type="password"
-                                       id="confirm-password-field"
-                                       value={confirmPassWord}
-                                       changeHandler={(e) => setConfirmPassWord(e.target.value)}
+                                    <input
+                                        type="password"
+                                        id="confirm-password-field"
+                                        {...register("confirmPassWord", {
+                                            required: "This field is required",
+                                            minLength: {value: 6, message: "Minimum amount of characters is 6"}
+                                            //validate: (value) => value === email || 'Passwords do not match'
+                                        })}
                                     />
+                                    {errors.confirmPassWord && <p className="error-message">{errors.confirmPassWord.message}</p>}
                                 </label>
-                                {error && <p className="error">This account already exists. Please try a different email address to register.</p>}
+
+                                {error && <p className="account-message">This account already exists</p>}
                                 <Button
                                     type="submit"
                                     className="button button--red-wide"
@@ -100,7 +114,6 @@ function SignUp() {
                                 >
                                     Sign up
                                 </Button>
-
                                 <p className="signup-link">Already have an account? <Link to="/signIn">Click here</Link>
                                 </p>
                             </form>
@@ -114,6 +127,5 @@ function SignUp() {
             </>
         );
     }
-
 
 export default SignUp;

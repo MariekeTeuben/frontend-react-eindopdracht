@@ -54,8 +54,17 @@ footer {
     padding: 10px 0;
 }
 
-.error {
+.error-message {
     color: orangered;
-    padding: 0 2em 0 2.8em;
+    font-size: 0.9em;
+    font-weight: 800;
+    text-align: left;
+}
+
+.account-message {
+    color: orangered;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 2em 0 1.6em;
     text-align: left;
 }
