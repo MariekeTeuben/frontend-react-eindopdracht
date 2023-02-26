@@ -22,25 +22,16 @@
     border-radius: 10px;
 }
 
-.form-title {
-    font-size: 1.5em;
+.account-registration {
+    font-size: 1em;
     font-weight: 600;
     padding: 24px 8px 24px 0;
     text-align: left;
     width: 70%;
 }
 
-.form-label {
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    width: 70%;
-    margin: 4px 0;
-    font-weight: 400;
-}
-
-.signin-link {
-    font-size: 0.8em;
+.signIn-link {
+    font-size: 0.9em;
     padding: 0 8px 24px 0;
     text-align: left;
     width: 70%;
@@ -52,19 +43,4 @@ footer {
     width: 100%;
     background-color: #476D5C;
     padding: 10px 0;
-}
-
-.error-message {
-    color: orangered;
-    font-size: 0.9em;
-    font-weight: 800;
-    text-align: left;
-}
-
-.account-message {
-    color: orangered;
-    font-size: 1em;
-    font-weight: 600;
-    padding: 0 2em 0 2.8em;
-    text-align: left;
 }

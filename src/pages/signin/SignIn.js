@@ -10,11 +10,13 @@ function SignIn() {
     const [user, setUsername] = useState('');
     const [pass, setPassword] = useState('');
     const [error, toggleError] = useState(false);
+    const [loading, toggleLoading] = useState(false);
     const {loginFunction} = useContext(AuthContext);
 
     async function handleSubmit(e) {
         e.preventDefault();
         toggleError(false);
+        toggleLoading(true);
         console.log("Invoer: " + user + pass);
 
         try {
@@ -28,6 +30,7 @@ function SignIn() {
             console.error(e);
             toggleError(true);
         }
+        toggleLoading(false);
     }
 
     return (
@@ -62,6 +65,7 @@ function SignIn() {
                                 />
                             </label>
                             {error && <p className="error">Invalid username or password. Please re-enter your user information.</p>}
+                            {loading && <p className="error">Signing in to your account. Please wait.</p> }
 
                             <Button
                                 type="submit"

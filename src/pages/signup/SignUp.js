@@ -30,7 +30,7 @@ function SignUp() {
                     role: ["user"],
                 });
                 console.log(response);
-                history.push('/signIn');
+                history.push('/signup-successful');
             } catch (e) {
                 console.error(e);
                 toggleError(true);
@@ -103,8 +103,8 @@ function SignUp() {
                                     />
                                     {errors.confirmPassWord && <p className="error-message">{errors.confirmPassWord.message}</p>}
                                 </label>
-                                {error && <p className="error">This account already exists. Please log in.</p>}
-                                {loading && <p className="error">Registering your account. Please wait.</p>}
+                                {error && <p className="account-message">This account already exists. Please log in.</p>}
+                                {loading && <p className="account-message">Registering your account. Please wait.</p>}
                                 <Button
                                     type="submit"
                                     className="button button--red-wide"
