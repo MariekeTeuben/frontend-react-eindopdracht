@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import './SignUp.css';
 import {Link, useHistory} from 'react-router-dom';
 import axios from "axios";
@@ -11,11 +11,13 @@ function SignUp() {
 
     const history = useHistory();
 
-    const {register, handleSubmit, formState: {errors}} = useForm();
+    const {register, handleSubmit, formState: {errors}, watch} = useForm({mode: "onChange"});
+    const password = useRef({});
+    password.current = watch("password", "");
+
 
     async function onFormSubmit(data) {
         console.log(data);
-        //if (passWord === confirmPassWord) {
 
             toggleError(false);
             toggleLoading(true);
@@ -37,7 +39,7 @@ function SignUp() {
             toggleLoading(false);
         }
 
-        console.log('ERRORS', errors);
+        console.log(errors);
 
         return (
             <>
@@ -59,54 +61,50 @@ function SignUp() {
                                         type="text"
                                         id="username-field"
                                         {...register("username", {
-                                            required: "This field is required",
+                                            required: "Username cannot be empty",
                                             minLength: {value: 6, message: "Minimum amount of characters is 6"}
                                         })}
                                     />
                                     {errors.username && <p className="error-message">{errors.username.message}</p>}
                                 </label>
-
                                 <label className="form-label" htmlFor="email-field">
                                     Email address
                                     <input
                                         type="email"
                                         id="email-field"
                                         {...register("email", {
-                                            required: "This field is required",
-                                            validate: (value) => value.includes('@') || 'Include an @ in the email address'
+                                            required: "Email cannot be empty",
+                                            validate: (value) => value.includes('@') || 'Please include an @ in the email address'
                                         })}
                                     />
-                                    {errors.email && <p className="error-message">{errors.email.message}</p>}
+                                      {errors.email && <p className="error-message">{errors.email.message}</p>}
                                 </label>
-
                                 <label className="form-label" htmlFor="password-field">
                                     Password
                                     <input
                                         type="password"
                                         id="password-field"
                                         {...register("password", {
-                                            required: "This field is required",
+                                            required: "Password cannot be empty",
                                             minLength: {value: 6, message: "Minimum amount of characters is 6"}
                                         })}
                                     />
                                     {errors.password && <p className="error-message">{errors.password.message}</p>}
                                 </label>
-
                                 <label className="form-label" htmlFor="confirm-password-field">
                                     Confirm Password
                                     <input
                                         type="password"
                                         id="confirm-password-field"
                                         {...register("confirmPassWord", {
-                                            required: "This field is required",
-                                            minLength: {value: 6, message: "Minimum amount of characters is 6"}
-                                            //validate: (value) => value === email || 'Passwords do not match'
+                                            required: "Confirm password cannot be empty",
+                                            validate: (value) => value === password.current || "The passwords do not match"
                                         })}
                                     />
                                     {errors.confirmPassWord && <p className="error-message">{errors.confirmPassWord.message}</p>}
                                 </label>
-
-                                {error && <p className="account-message">This account already exists</p>}
+                                {error && <p className="error">This account already exists. Please log in.</p>}
+                                {loading && <p className="error">Registering your account. Please wait.</p>}
                                 <Button
                                     type="submit"
                                     className="button button--red-wide"
