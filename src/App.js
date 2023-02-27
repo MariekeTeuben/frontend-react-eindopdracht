@@ -3,6 +3,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import HomePage from "./pages/home/Home";
 import SignIn from "./pages/signin/SignIn";
 import Signup from "./pages/signup/SignUp";
+import SignUpSuccessful from "./pages/signup-successful/SignUp-Successful";
 import TopMenu from "./components/topMenu/TopMenu";
 import Browse from "./pages/browse/Browse";
 import Search from "./pages/search/Search";
@@ -23,6 +24,9 @@ function App() {
                     </Route>
                     <Route exact path="/signup">
                         <Signup/>
+                    </Route>
+                    <Route exact path="/signup-successful">
+                        <SignUpSuccessful/>
                     </Route>
                     <Route exact path="/signIn">
                         <SignIn/>
