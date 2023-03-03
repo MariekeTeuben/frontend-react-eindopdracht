@@ -10,6 +10,12 @@
     background-size: cover;
 }
 
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .photo-container {
     display: flex;
     flex-direction: row;
@@ -35,7 +41,6 @@
 .tags:hover {
     background-color: #d7d6e7;
 }
-
 
 
 

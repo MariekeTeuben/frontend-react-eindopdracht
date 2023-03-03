@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from "axios";
 import './ParkDetails.css';
 import Card from "../../components/card/Card";
+import Button from "../../components/button/Button";
 
 
 function ParkDetails() {
@@ -23,6 +24,30 @@ function ParkDetails() {
         fetchData();
     }, [parkCode]);
 
+    function addFav() {
+        let favorites = [];
+        const favorite = {
+            id: (details[0].parkCode),
+            name: (details[0].fullName),
+            image: (details[0].images[0].url),
+        };
+
+        if(localStorage.getItem('favorites')) {
+            console.log("Favorites bestaat!");
+            // Haal local storage variabele op als deze bestaat
+            favorites = JSON.parse(localStorage.getItem('favorites'));
+        }
+
+        if(!JSON.stringify(favorites).includes(favorite.name)) {
+            console.log('Deze favorite bestaat nog niet! Toevoegen aan favorites...');
+            favorites.push(favorite);
+        }
+
+        console.log(favorites);
+
+        // Voeg park toe als park nog niet is toegevoegd
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
 
     return (
         <>
@@ -37,9 +62,17 @@ function ParkDetails() {
                     <div className="inner-content-container">
                         {details.length > 0 && (
                             <div>
-                                <h1>{details[0].fullName}</h1>
+                                <div className="title-container">
+                                    <h1>{details[0].fullName}</h1>
+                                    <Button
+                                        type="button"
+                                        className="button button--favorites"
+                                        clickHandler={addFav}
+                                    >
+                                        Add to favorites
+                                    </Button>
+                                </div>
                                 <h3>{details[0].description}</h3>
-
                                 <div className="photo-container">
                                     <Card
                                         image={details[0].images[0].url}
