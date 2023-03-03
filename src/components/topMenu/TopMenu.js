@@ -43,6 +43,7 @@ function TopMenu() {
                             <Button
                                 type="button"
                                 className="button"
+                                clickHandler={() => history.push('/favorites')}
                             >
                                 Favorites
                             </Button>

@@ -8,6 +8,7 @@ import TopMenu from "./components/topMenu/TopMenu";
 import Browse from "./pages/browse/Browse";
 import Search from "./pages/search/Search";
 import ParkDetails from "./pages/parkdetails/ParkDetails";
+import Favorites from "./pages/favorites/Favorites";
 import {AuthContext} from "./context/AuthContext";
 import './App.css';
 
@@ -39,6 +40,9 @@ function App() {
                     </Route>
                     <Route path="/parks/:parkCode">
                         {isAuthenticated ? <ParkDetails/> : <Redirect to="/"/>}
+                    </Route>
+                    <Route path="/favorites">
+                        {isAuthenticated ? <Favorites/> : <Redirect to="/"/>}
                     </Route>
                 </Switch>
             </div>
