@@ -29,6 +29,10 @@
     background-color: white;
 }
 
+.button--favorites {
+    margin: 0;
+}
+
 .button, .button--red, .button--red-wide:hover {
     cursor: pointer;
 }
