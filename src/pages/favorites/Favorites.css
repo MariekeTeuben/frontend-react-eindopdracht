@@ -25,6 +25,15 @@ main {
     height: 47vh;
 }
 
+.favorites-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 0 0 0;
+}
+
 footer {
     position: absolute;
     bottom: 0;

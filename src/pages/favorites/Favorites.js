@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './Favorites.css';
 import {Link} from "react-router-dom";
+import Favorite from "../../components/favorite/favorite";
 
 function Favorites() {
     const [favorites, setFavorites] = useState([]);
@@ -34,16 +35,17 @@ function Favorites() {
                     <div className="inner-content-container">
                         <h1>Favorites</h1>
                         <div className="favorites-container">
-                            <ul>
-                                {favorites.length > 0 && favorites[0].map((favorite) => {
-                                    return <li key={favorite.id}>
-                                        <Link to={`parks/${favorite.id}`}>
+                            {favorites.length > 0 && favorites[0].map((favorite) => {
+                                return <Link to={`parks/${favorite.id}`}>
+                                    <Favorite
+                                    image={favorite.image}
+                                    title=
                                             {favorite.name}
-                                        </Link>
-                                    </li>
-                                })
-                                }
-                            </ul>
+
+
+                                />
+                                </Link>
+                            })}
                         </div>
                     </div>
                 </section>
