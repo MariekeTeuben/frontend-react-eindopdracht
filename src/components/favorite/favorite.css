@@ -6,15 +6,18 @@
 }
 
 .favorite-container {
-    border: 1px solid #bacdd8;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     max-width: 180px;
-    max-height: 180px;
+    min-height: 180px;
+    background-color: #dde9ed;
+}
+
+.favorite-container:hover {
+    box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .favorite-image {
@@ -23,11 +26,11 @@
     height: 130px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-    background-size: cover;
+
 }
 
 .favorite-title {
     font-size: 12px;
     font-weight: 600;
-    background-color: #dde9ed;
+    min-height: 80px;
 }

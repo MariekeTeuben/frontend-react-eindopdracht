@@ -36,14 +36,15 @@ function Favorites() {
                         <h1>Favorites</h1>
                         <div className="favorites-container">
                             {favorites.length > 0 && favorites[0].map((favorite) => {
-                                return <Favorite
+                                return <Link to={`parks/${favorite.id}`}>
+                                    <Favorite
                                     image={favorite.image}
-                                    title={
-                                        <Link to={`parks/${favorite.id}`}>
+                                    title=
                                             {favorite.name}
-                                        </Link>
-                                    }
+
+
                                 />
+                                </Link>
                             })}
                         </div>
                     </div>
