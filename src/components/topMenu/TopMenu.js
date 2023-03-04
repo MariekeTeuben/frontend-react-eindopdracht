@@ -29,9 +29,9 @@ function TopMenu() {
                             <Button
                                 type="button"
                                 className="button"
-                                clickHandler={() => history.push('/browse')}
+                                clickHandler={() => history.push('/allParks')}
                             >
-                                Browse
+                                All Parks
                             </Button>
                             <Button
                                 type="button"
