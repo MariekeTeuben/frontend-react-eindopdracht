@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './Favorites.css';
 import {Link} from "react-router-dom";
-import Favorite from "../../components/favorite/favorite";
+import Favorite from "../../components/favorite/Favorite";
 import Button from "../../components/button/Button";
 
 function Favorites() {
@@ -27,7 +27,7 @@ function Favorites() {
 
     function clearFav() {
         localStorage.removeItem('favorites');
-        window.location.reload(true);
+        window.location.reload();
     }
 
 

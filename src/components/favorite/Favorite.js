@@ -1,5 +1,5 @@
 import React from "react";
-import './favorite.css';
+import './Favorite.css';
 
 function Favorite({image, title}) {
 
