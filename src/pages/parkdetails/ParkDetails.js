@@ -4,11 +4,13 @@ import axios from "axios";
 import './ParkDetails.css';
 import Card from "../../components/card/Card";
 import Button from "../../components/button/Button";
+import {useHistory} from "react-router-dom";
 
 
 function ParkDetails() {
     const [details, setDetails] = useState({});
     const {parkCode} = useParams();
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -49,6 +51,10 @@ function ParkDetails() {
         localStorage.setItem('favorites', JSON.stringify(favorites));
     }
 
+    function listOfFav () {
+        history.push('/favorites')
+    }
+
     return (
         <>
             <header className="header-parkDetails">
@@ -67,8 +73,10 @@ function ParkDetails() {
                                     <Button
                                         type="button"
                                         className="button button--favorites"
-                                        clickHandler={addFav}
-                                    >
+                                        clickHandler={() => {
+                                            addFav();
+                                            listOfFav();
+                                        }}>
                                         Add to favorites
                                     </Button>
                                 </div>

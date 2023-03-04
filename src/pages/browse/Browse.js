@@ -46,7 +46,7 @@ function Browse() {
 
                         <div>
                             {alphabet.length > 0 && alphabet.map((letter) => {
-                                return <Button
+                                return <Button key={letter}
                                     type="button"
                                     className="button--character"
                                     clickHandler={() => getByAlphabet(`${letter}`)}
