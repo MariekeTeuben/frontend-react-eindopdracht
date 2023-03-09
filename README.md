@@ -1,6 +1,32 @@
-# Getting Started with National Park Service App
+# National Park Service - React App
 
-Welcome to the National Park Service App! The app where you can start planning your visit to the beautiful National Parks of the USA.
+## Index
+
+1.0 Introduction  
+1.1 What does the project do?  
+1.2 What functions do the project have?  
+1.3 Preview of the NPS app   
+2.0 Installation and requirements  
+2.1 Available Scripts  
+3.0 Need some help?
+
+
+## 1.0 Introduction
+
+**1.1 What does the project do?**
+
+**1.2 What functions do the project have?**
+
+**1.3 Preview of the NPS app**
+
+## 2.0 Installation and requirements
+
+**2.1 Available Scripts**
+
+## 3.0 Need some help?
+
+
+
 
 In this app you can:
 * See all National Parks
