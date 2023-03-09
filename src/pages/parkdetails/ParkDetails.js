@@ -70,6 +70,7 @@ function ParkDetails() {
                             <div>
                                 <div className="title-container">
                                     <h1>{details[0].fullName}</h1>
+
                                     <Button
                                         type="button"
                                         className="button button--favorites"

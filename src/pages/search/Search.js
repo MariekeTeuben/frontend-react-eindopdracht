@@ -93,7 +93,7 @@ function Search() {
                         <div className="results-overview">
 
                             {parkResults.length < 1 &&
-                                <p>No parks were found. Please make sure you search by the correct search values.</p>
+                                <p>No parks were found.</p>
                             }
 
                             <ul>
