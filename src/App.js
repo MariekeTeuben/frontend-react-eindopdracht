@@ -5,7 +5,7 @@ import SignIn from "./pages/signin/SignIn";
 import Signup from "./pages/signup/SignUp";
 import SignUpSuccessful from "./pages/signup-successful/SignUp-Successful";
 import TopMenu from "./components/topMenu/TopMenu";
-import Browse from "./pages/browse/Browse";
+import AllParks from "./pages/allparks/AllParks";
 import Search from "./pages/search/Search";
 import ParkDetails from "./pages/parkdetails/ParkDetails";
 import Favorites from "./pages/favorites/Favorites";
@@ -32,8 +32,8 @@ function App() {
                     <Route exact path="/signIn">
                         <SignIn/>
                     </Route>
-                    <Route path="/browse">
-                        {isAuthenticated ? <Browse/> : <Redirect to="/"/>}
+                    <Route path="/allParks">
+                        {isAuthenticated ? <AllParks/> : <Redirect to="/"/>}
                     </Route>
                     <Route path="/search">
                         {isAuthenticated ? <Search/> : <Redirect to="/"/>}

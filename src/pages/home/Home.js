@@ -27,7 +27,7 @@ function HomePage() {
                             {isAuthenticated ?
                                 <Link
                                     className="call-to-action"
-                                    to="/browse"
+                                    to="/allParks"
                                 >
                                     start your experience
                                 </Link>

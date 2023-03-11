@@ -91,6 +91,11 @@ function Search() {
                         </div>
 
                         <div className="results-overview">
+
+                            {parkResults.length < 1 &&
+                                <p>No parks were found.</p>
+                            }
+
                             <ul>
                                 {parkResults.length > 0 && parkResults.map((parkResult) => {
                                     return <li key={parkResult.parkCode}>

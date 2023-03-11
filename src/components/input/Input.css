@@ -5,3 +5,7 @@
     background-color: lightgrey;
     border: none;
 }
+
+.input:hover {
+    border: 1px solid black;
+}

@@ -70,7 +70,7 @@ function AuthContextProvider({ children }) {
             const decodedToken = jwtDecode(token);
             console.log('decoded token:', decodedToken);
 
-            fetchUserData(token, decodedToken.sub).then(r => history.push('/browse') );
+            fetchUserData(token, decodedToken.sub).then(r => history.push('/allParks') );
 
             console.log("Gebruiker is ingelogd");
     }

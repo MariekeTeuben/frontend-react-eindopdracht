@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import './Browse.css';
+import './AllParks.css';
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Button from "../../components/button/Button";
 
 
-function Browse() {
+function AllParks() {
     const [parkResults, setParkResults] = useState([]);
     const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     const [fullList, setFullList] = useState([]);
@@ -74,5 +74,5 @@ function Browse() {
     );
 }
 
-export default Browse;
+export default AllParks;
 
