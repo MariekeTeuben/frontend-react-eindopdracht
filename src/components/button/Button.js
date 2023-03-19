@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.css';
 
 
-function Button({ children, type, className, clickHandler, disabled }) {
+function Button({children, type, className, clickHandler, disabled}) {
     return (
         <button
             type={type}

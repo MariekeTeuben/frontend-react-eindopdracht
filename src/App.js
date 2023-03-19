@@ -13,7 +13,7 @@ import {AuthContext} from "./context/AuthContext";
 import './App.css';
 
 function App() {
-    const { isAuthenticated } = useContext(AuthContext);
+    const {isAuthenticated} = useContext(AuthContext);
 
     return (
         <>

@@ -27,7 +27,6 @@ function SignUp() {
                 password: data.password,
                 role: ["user"],
             });
-            console.log(response);
             history.push('/signup-successful');
         } catch (e) {
             console.error(e);

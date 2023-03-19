@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import React, {useEffect, useState} from "react";
+import {useParams} from 'react-router-dom';
 import axios from "axios";
 import './ParkDetails.css';
 import Card from "../../components/card/Card";
@@ -34,24 +34,18 @@ function ParkDetails() {
             image: (details[0].images[0].url),
         };
 
-        if(localStorage.getItem('favorites')) {
-            console.log("Favorites bestaat!");
-            // Haal local storage variabele op als deze bestaat
+        if (localStorage.getItem('favorites')) {
             favorites = JSON.parse(localStorage.getItem('favorites'));
         }
 
-        if(!JSON.stringify(favorites).includes(favorite.name)) {
-            console.log('Deze favorite bestaat nog niet! Toevoegen aan favorites...');
+        if (!JSON.stringify(favorites).includes(favorite.name)) {
             favorites.push(favorite);
         }
 
-        console.log(favorites);
-
-        // Voeg park toe als park nog niet is toegevoegd
         localStorage.setItem('favorites', JSON.stringify(favorites));
     }
 
-    function listOfFav () {
+    function listOfFav() {
         history.push('/favorites')
     }
 

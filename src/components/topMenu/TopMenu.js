@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import { useHistory, Link } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+import React, {useContext} from "react";
+import {useHistory, Link} from "react-router-dom";
+import {AuthContext} from "../../context/AuthContext";
 import Button from "../button/Button";
 import logo from '../../assets/logo.png';
 import './TopMenu.css';

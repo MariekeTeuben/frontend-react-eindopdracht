@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import states from '../../data/states.json';
 import './SearchBar.css';
 import axios from "axios";
