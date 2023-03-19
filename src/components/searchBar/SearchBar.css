@@ -14,7 +14,7 @@
 
 .search-options {
     display: flex;
-    justify-content: space-between; /*space-between;*/
+    justify-content: space-between;
     width: 100%;
     flex-wrap: nowrap;
 }

@@ -23,7 +23,6 @@ function Favorites() {
         fetchFav();
     }, []);
 
-    console.log(favorites);
 
     function clearFav() {
         localStorage.removeItem('favorites');
@@ -47,7 +46,8 @@ function Favorites() {
                         {favorites.length < 1 &&
                             <>
                                 <b>No favorites yet</b>
-                                <p>You can bookmark a park by clicking the 'add to favorites' button on the park details page.</p>
+                                <p>You can bookmark a park by clicking the 'add to favorites' button on the park details
+                                    page.</p>
                             </>
                         }
 
@@ -55,9 +55,9 @@ function Favorites() {
                             {favorites.length > 0 && favorites[0].map((favorite) => {
                                 return <Link to={`parks/${favorite.id}`}>
                                     <Favorite
-                                    image={favorite.image}
-                                    title={favorite.name}
-                                />
+                                        image={favorite.image}
+                                        title={favorite.name}
+                                    />
                                 </Link>
                             })}
                         </div>

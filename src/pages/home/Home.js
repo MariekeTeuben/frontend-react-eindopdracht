@@ -9,7 +9,7 @@ import {AuthContext} from "../../context/AuthContext";
 
 
 function HomePage() {
-    const { isAuthenticated } = useContext(AuthContext);
+    const {isAuthenticated} = useContext(AuthContext);
 
     return (
         <>
@@ -31,7 +31,7 @@ function HomePage() {
                                 >
                                     start your experience
                                 </Link>
-                            :
+                                :
                                 <Link
                                     className="call-to-action"
                                     to="/signup"

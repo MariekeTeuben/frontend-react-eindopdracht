@@ -1,28 +1,24 @@
-import React, { createContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, {createContext, useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import jwtDecode from "jwt-decode";
 import axios from "axios";
 import spinner from '../assets/loading.gif';
 
 export const AuthContext = createContext({});
 
-function AuthContextProvider({ children }) {
-    const [isAuth, setAuth] = useState( {
+function AuthContextProvider({children}) {
+    const [isAuth, setAuth] = useState({
         isAuth: false,
         user: null,
         status: 'pending',
     });
 
     useEffect(() => {
-        console.log('De context is zojuist opnieuw opgestart!');
-
         const token = localStorage.getItem('token');
 
         if (token !== undefined && (token)) {
-            console.log("Stiekem toch hier..");
             const decodedToken = jwtDecode(token);
             fetchUserData(token, decodedToken);
-            console.log("Token: " + decodedToken);
         } else {
             setAuth({
                 ...isAuth,
@@ -32,7 +28,6 @@ function AuthContextProvider({ children }) {
     }, []);
 
     async function fetchUserData(token, decodedToken) {
-        console.log("Fetching user data...");
         try {
             const response = await axios.get('https://frontend-educational-backend.herokuapp.com/api/user', {
                 headers: {
@@ -40,8 +35,6 @@ function AuthContextProvider({ children }) {
                     "Authorization": `Bearer ${token}`,
                 }
             });
-
-            console.log(response.data);
 
             setAuth({
                 ...isAuth,
@@ -65,31 +58,24 @@ function AuthContextProvider({ children }) {
     const history = useHistory();
 
     function login(token) {
-            console.log("Login token: " + token);
-            localStorage.setItem('token', token);
-            const decodedToken = jwtDecode(token);
-            console.log('decoded token:', decodedToken);
+        localStorage.setItem('token', token);
+        const decodedToken = jwtDecode(token);
 
-            fetchUserData(token, decodedToken.sub).then(r => history.push('/allParks') );
-
-            console.log("Gebruiker is ingelogd");
+        fetchUserData(token, decodedToken.sub).then(r => history.push('/allParks'));
     }
 
     function logout() {
-        console.log("Logging out...");
-        setAuth( {
+        setAuth({
             ...isAuth,
             isAuth: false,
             user: null,
         });
 
         localStorage.clear();
-        console.log('Gebruiker is uitgelogd');
         history.push('/signIn');
     }
 
     const contextData = {
-        banaan: 'geel',
         isAuthenticated: isAuth.isAuth,
         userDetails: isAuth.user,
         loginFunction: login,

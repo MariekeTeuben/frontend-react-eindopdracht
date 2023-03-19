@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import './AllParks.css';
 import axios from "axios";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import Button from "../../components/button/Button";
 
 
@@ -16,7 +16,7 @@ function AllParks() {
             try {
                 const result = await axios.get(`https://developer.nps.gov/api/v1/parks?limit=500&api_key=gF5KCU6HVDRDuaDyTQuyKS6YOzzaNBkgJl1IlOZg`);
                 setParkResults(result.data.data);
-                setFullList(result.data.data); // Needed for search
+                setFullList(result.data.data);
             } catch (e) {
                 console.error(e);
             }
@@ -47,9 +47,9 @@ function AllParks() {
                         <div>
                             {alphabet.length > 0 && alphabet.map((letter) => {
                                 return <Button key={letter}
-                                    type="button"
-                                    className="button--character"
-                                    clickHandler={() => getByAlphabet(`${letter}`)}
+                                               type="button"
+                                               className="button--character"
+                                               clickHandler={() => getByAlphabet(`${letter}`)}
                                 >
                                     {letter}
                                 </Button>
