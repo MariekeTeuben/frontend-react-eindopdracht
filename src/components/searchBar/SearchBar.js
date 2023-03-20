@@ -27,7 +27,7 @@ function SearchBar({setNameHandler, setStateHandler, setActivityHandler}) {
         }
 
         fetchActivities();
-    }, [setNameHandler, setStateHandler, setActivityHandler]);
+    }, []);
 
 
     function handleClick() {
